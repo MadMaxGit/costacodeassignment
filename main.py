@@ -1,5 +1,20 @@
-from graphene import Schema, ObjectType, String, Int, Field, List, Mutation
-import requests
+from graphene import Schema, ObjectType, String, Int, Field, List
+from pymongo import MongoClient
+
+DB_URL="mongodb+srv://root:root@cluster0.8vufshx.mongodb.net/?retryWrites=true&w=majority"
+
+# Connect to MongoDB
+client = MongoClient('mongodb+srv://root:root@cluster0.8vufshx.mongodb.net/?retryWrites=true&w=majority')
+try:
+    client.admin.command('ping')
+    print("Pinged your deployment. You successfully connected to MongoDB!")
+except Exception as e:
+    print(e)
+
+db = client["costacodeassignment"]  # Replace "your_database" with your database name
+collection = db["vehicles"]  # Replace "your_collection" with your collection name
+
+mockoon_url = 'http://localhost:1337/vehicle/info'
 
 class UserType(ObjectType):
     id = Int()
