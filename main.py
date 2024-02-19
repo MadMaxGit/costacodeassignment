@@ -16,6 +16,23 @@ collection = db["vehicles"]  # Replace "your_collection" with your collection na
 
 mockoon_url = 'http://localhost:1337/vehicle/info'
 
+class ServiceInfo(ObjectType):
+    serviceName = String()
+    status = String()
+    lastUpdate = String()
+
+class VehicleEntity(ObjectType):
+    id = String(required=True)
+    name = String()
+    msidn = String()
+    engineStatus = String()
+    fleet = String()
+    brand = String()
+    countryOfOperation = String()
+    chassisNumber = String()
+    cassisSeries = String()
+    services = List(ServiceInfo)
+    
 class UserType(ObjectType):
     id = Int()
     name= String()
