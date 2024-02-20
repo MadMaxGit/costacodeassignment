@@ -14,12 +14,11 @@ schema = Schema(query=Query) #Graphene is a Python library for building GraphQL 
 
 app = FastAPI() #Web Framework for building PIS with Python
 
-vehicle_service = VehicleMock(collection) #Move this to line 21 and check it
-
 @app.get('/fetch_and_store')
 async def fetch_store():
+    vehicle_service = VehicleMock(collection) #Move this to line 21 and check it
     saved_count = vehicle_service.fetch_and_store_data()
-    logger.info("Saved {saved_count} records.") #Fix this logik in the later part
+    logger.info(f"{saved_count} records saved.")
     return {'message': f'{saved_count} records stored successfully in MongoDB'}
 
 app.mount("/graphql", GraphQLApp(
