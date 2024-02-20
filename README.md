@@ -8,6 +8,7 @@ To implement a simplified version of the GraphQL serving application.
 4. IDE for Coding, like Visual Code.
 5. Install python web framework FastAPI, Graphene, Starlette, Uvicorn
 
-#Setup a Python Virtual Environment
+# Setup a Python Virtual Environment
+
 On the terminal
 ´´´python -m venv env´´´
