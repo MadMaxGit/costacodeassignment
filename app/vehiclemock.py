@@ -1,6 +1,6 @@
 import requests
+from typing import List, Dict
 from loguru import logger
-
 logger.add("app1.log", rotation="500 MB") #Remove it after adding
 
 class VehicleMock:
