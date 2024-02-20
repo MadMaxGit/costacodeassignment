@@ -16,8 +16,8 @@ app = FastAPI() #Web Framework for building PIS with Python
 
 @app.get('/fetch_and_store')
 async def fetch_store():
-    vehicle_service = VehicleMock(collection) #Move this to line 21 and check it
-    saved_count = vehicle_service.fetch_and_store_data()
+    vehicle_service = VehicleMock(collection) 
+    saved_count = vehicle_service.fetch_and_store_data() #Return the number of vehicle data stored in DB
     logger.info(f"{saved_count} records saved.")
     return {'message': f'{saved_count} records stored successfully in MongoDB'}
 
