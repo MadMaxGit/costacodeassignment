@@ -1,0 +1,43 @@
+#Find vehicle by id
+{
+  vehicleById(vehicleId: "your_vehicle_id") {
+    id
+    name
+    fleet
+    services {
+      serviceName
+      status
+      lastUpdate
+    }
+  }
+}
+
+#Find vehicle by Partial Name 
+{
+  vehiclesByPartialName(partialName: "partial_name") {
+    id
+    name
+    msidn
+    engineStatus
+    services {
+      serviceName
+      status
+      lastUpdate
+    }
+  }
+}
+
+#Find vehicle by Service Status 
+{
+  vehiclesByServiceStatus(serviceName: "service_name", serviceStatus: "service_status") {
+    id
+    name
+    countryOfOperation
+    cassisSeries
+    services {
+      serviceName
+      status
+      lastUpdate
+    }
+  }
+}
