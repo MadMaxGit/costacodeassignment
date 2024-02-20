@@ -17,7 +17,7 @@ python -m venv env
 # Setup
 1. Created of Mongo DB in Cloud which is called as Mongo DB Atlas.
 2. Start the Mockoon Server and check the Port it is running, mostly in port 1337.
-3. Install the Python and python intrepeter.
+3. Install the Python and python intrepreter.
 4. IDE for Coding, like Visual Code.
 5. Install python web framework FastAPI, Graphene, Starlette, Uvicorn, pymongo
 
@@ -26,7 +26,7 @@ pip install pymongo, uvicorn, graphene, fastapi
 ```
 
 
-# Start the Apllication
+# Start the Application
 
 On the virtual Environment terminal
 ```
