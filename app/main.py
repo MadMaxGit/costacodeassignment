@@ -4,8 +4,6 @@ from fastapi import FastAPI
 from starlette_graphene3 import GraphQLApp, make_playground_handler
 
 from loguru import logger
-from app.vehiclemock import VehicleMock
-from app.db.database import collection
 
 #Adding a Logger Library for logging
 logger.add("app.log", rotation="500 MB")
