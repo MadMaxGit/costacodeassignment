@@ -1,4 +1,5 @@
 import requests
+from app.settings.config import mockoon_URL 
 from loguru import logger
 logger.add("app1.log", rotation="500 MB") #Remove it after adding
 
@@ -45,7 +46,7 @@ class VehicleMock:
     
     def get_vehicle_service(self, vehicle):
         try:
-            response = requests.get(f"http://localhost:1337/vehicle/services?id={vehicle['id']}")
+            response = requests.get(f"{mockoon_URL}services?id={vehicle['id']}")
             if response.status_code == 200:
                 return response.json()
             else:
@@ -56,7 +57,7 @@ class VehicleMock:
 
     def get_vehicle_info(self, vehicle):
         try:
-            response = requests.get(f"http://localhost:1337/vehicle/info?id={vehicle['id']}")
+            response = requests.get(f"{mockoon_URL}info?id={vehicle['id']}")
             if response.status_code == 200:
 
                 return response.json()
@@ -68,7 +69,7 @@ class VehicleMock:
 
     def get_vehicle_list(self):
         try:
-            response = requests.get("http://localhost:1337/vehicle/list")
+            response = requests.get(f"{mockoon_URL}list")
             if response.status_code == 200:
                 data = response.json()
                 return data.get('vehicles', [])
