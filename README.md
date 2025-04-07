@@ -1,4 +1,4 @@
-# costacodeassignment
+# costacodeproject
 To implement a simplified version of the GraphQL serving application.
 
 # Setup a Python Virtual Environment
